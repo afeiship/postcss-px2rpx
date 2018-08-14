@@ -2,7 +2,7 @@ const postcss = require('gulp-postcss');
 const gulp = require('gulp');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const one2many = require('./src/index');
+const px2rpx = require('./src/index');
 const del = require('del');
 
 // clean:
@@ -13,7 +13,7 @@ gulp.task('clean', () => {
 // styles:
 gulp.task('styles', function () {
   var plugins = [
-    one2many(),
+    px2rpx({ ratio: 2 }),
     autoprefixer({ browsers: ['last 1 version'] }),
     cssnano()
   ];
