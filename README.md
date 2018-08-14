@@ -5,7 +5,7 @@
 ```css
 body{
   color: #f00;
-  width: 200PX;
+  width: 200PX; /*PX will be ignored by plugin*/
   border: 10px;
   font-size: 12.34px;
   border: 10rpx;
