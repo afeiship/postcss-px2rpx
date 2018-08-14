@@ -1,1 +1,9 @@
-body{color:red;width:200px;border:20rpx;font-size:24.68rpx;border:10rpx}
+body{
+  color: #f00;
+  width: 200px;
+  border: 20rpx;
+  font-size: 24.68rpx;
+  border: 20rpx solid #f00;
+  border-left:24.66rpx solid #f00;
+  border:1px solid #f00;
+}

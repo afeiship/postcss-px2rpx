@@ -15,7 +15,7 @@ gulp.task('styles', function () {
   var plugins = [
     px2rpx({ ratio: 2 }),
     autoprefixer({ browsers: ['last 1 version'] }),
-    cssnano()
+    // cssnano()
   ];
   return gulp.src('test/test.css')
     .pipe(postcss(plugins))

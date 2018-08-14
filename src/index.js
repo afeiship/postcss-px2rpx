@@ -1,7 +1,8 @@
 var postcss = require('postcss');
 var PX_RE = /\dpx/;
 var RPX = 'rpx';
-var IGNORE_UNIT = 'PX';
+var PX_UPPER = 'PX';
+var PX_LOWER = 'px';
 
 module.exports = postcss.plugin('postcss-px2rpx', function (inOptions) {
   return function (css) {
@@ -14,16 +15,15 @@ module.exports = postcss.plugin('postcss-px2rpx', function (inOptions) {
       rule.walkDecls(function (decl, i) {
         var key = decl.prop;
         var value = decl.value;
-        var parseValue = parseFloat(value);
+        var parsedValue = parseFloat(value);
 
         if (PX_RE.test(value)) {
-          decl.value = options.ratio * parseValue + RPX;
+          decl.value = value.replace(parsedValue + PX_LOWER, options.ratio * parsedValue + RPX);
         }
 
-        if (~IGNORE_UNIT.indexOf(value)) {
-          decl.value = parseValue + IGNORE_UNIT.toLocaleLowerCase();
+        if (~value.indexOf(PX_UPPER)) {
+          decl.value = value.replace(PX_UPPER, PX_LOWER);
         }
-
       });
     });
   }
