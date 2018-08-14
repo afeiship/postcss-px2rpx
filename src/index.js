@@ -18,7 +18,10 @@ module.exports = postcss.plugin('postcss-px2rpx', function (inOptions) {
         var parsedValue = parseFloat(value);
 
         if (PX_RE.test(value)) {
-          decl.value = value.replace(parsedValue + PX_LOWER, options.ratio * parsedValue + RPX);
+          decl.value = value.replace(
+            parsedValue + PX_LOWER,
+            options.ratio * parsedValue + RPX
+          );
         }
 
         if (~value.indexOf(PX_UPPER)) {
