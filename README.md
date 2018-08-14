@@ -20,3 +20,9 @@ body{
   border: 10rpx;
 }
 ```
+## options
+
+| Name  | Default | Description   |
+| ----- | ------- | ------------- |
+| ratio | 2       | 10px -> 20rpx |
+
