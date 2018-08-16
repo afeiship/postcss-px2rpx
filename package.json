@@ -8,7 +8,9 @@
     "email": "1290657123@qq.com"
   },
   "scripts": {
-    "build": "gulp"
+    "build": "gulp",
+    "test": "mocha",
+    "test-styles": "gulp styles"
   },
   "main": "dist/index.js",
   "license": "MIT",
@@ -21,6 +23,7 @@
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-postcss": "^7.0.1",
+    "mocha": "^5.2.0",
     "postcss": "^6.0.23"
   }
 }
